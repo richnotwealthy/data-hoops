@@ -9,7 +9,7 @@
   },
   "scripts": {
     "clean": "rimraf dist",
-    "postinstall": "npm deploy:prod",
+    "postinstall": "npm run deploy:prod",
     "compile": "better-npm-run compile",
     "lint": "eslint bin build config server src tests",
     "lint:fix": "npm run lint -- --fix",
