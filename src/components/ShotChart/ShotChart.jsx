@@ -23,7 +23,7 @@ class ShotChart extends Component {
         var name = this.props.playerName;
 
         var options = {
-            url: 'http://'+window.location.hostname+':5656/nbastats/'+year+'/'+this.props.playerID,
+            url: 'http://'+window.location.hostname+':'+(+PORT+1)+'/nbastats/'+year+'/'+this.props.playerID,
             withCredentials: false
         }
 

@@ -76,8 +76,8 @@ api.get('/nbastats/:years/:playerid', (req, res) => {
     });
 });
 
-api.listen(5656, () => {
-    console.log('API listening on port 5656');
+api.listen(+config.server_port+1, () => {
+    console.log('API listening on port ' + (+config.server_port+1));
 });
 
 module.exports = app
