@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { playerSelect } from '../modules/chart'
+import { playerSelect, yearSelect } from '../modules/chart'
 
 /*  This is a container component. Notice it does not contain any JSX,
     nor does it import React. This component is **only** responsible for
@@ -13,7 +13,8 @@ import ChartView from '../components/ChartView'
     implementing our wrapper around increment; the component doesn't care   */
 
 const mapDispatchToProps = {
-  playerSelect
+  playerSelect,
+  yearSelect
 }
 
 const mapStateToProps = (state) => ({

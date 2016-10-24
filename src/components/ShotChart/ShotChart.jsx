@@ -96,7 +96,7 @@ class ShotChart extends Component {
                 .append("svg")
                 .chart("BasketballShotChart", {
                     width: 900,
-                    title: '2015-2016',
+                    title: name + ' ' + year,
                     // instead of makes/attempts, use z
                     hexagonFillValue: function(d) {  return d.z; },
                     // switch heat scale domain to [-2.5, 2.5] to reflect range of z values

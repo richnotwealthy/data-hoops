@@ -6,10 +6,18 @@ export const ChartView = (props) => {
     return (
       <div>
           <div className='col-md-4'>
-              <SidePanel playerID={props.playerID} playerSelect={props.playerSelect} />
+              <SidePanel playerID={props.playerID}
+                  playerName={props.playerName}
+                  playerTeam={props.team}
+                  year={props.year}
+                  yearSelect={props.yearSelect}
+                  playerSelect={props.playerSelect} />
           </div>
           <div className='col-md-8'>
-              <ShotChart playerID={props.playerID} playerName={props.playerName} year={props.year} />
+              <ShotChart playerID={props.playerID}
+                  playerName={props.playerName}
+                  playerTeam={props.team}
+                  year={props.year} />
           </div>
       </div>
     )

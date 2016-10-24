@@ -7,18 +7,22 @@ class PlayerDropdown extends Component {
     }
 
     playerSelect(e) {
-        this.props.playerSelect({ id: e.target.value, name: e.target.name })
+        this.props.playerSelect({
+            id: e.target.value.split(':')[0],
+            name: e.target.value.split(':')[1],
+            team: e.target.value.split(':')[2]
+        })
     }
 
     render() {
         var options = this.props.data.map(function(option) {
             return (
-                <option key={option.id} value={option.id} >{option.name}</option>
+                <option key={option.id} value={option.id + ':' + option.name + ':' + option.team} >{option.name}</option>
             )
         });
 
         return (
-            <select value={this.props.playerID} onChange={this.playerSelect}>
+            <select value={this.props.playerID+':'+this.props.playerName+':'+this.props.playerTeam} onChange={this.playerSelect}>
                 {options}
             </select>
         )

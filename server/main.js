@@ -66,7 +66,7 @@ api.get('/nbastats/:years/:playerid', (req, res) => {
     'ateTo=&GameID=&GameSegment=&LastNGames=0&LeagueID=00&Loca'+
     'tion=&MeasureType=Base&Month=0&OpponentTeamID=0&Outcome=&'+
     'PaceAdjust=N&PerMode=PerGame&Period=0&PlayerID='+playerid+'&Plu'+
-    'sMinus=N&Position=&Rank=N&RookieYear=&Season=2015-16&Seas'+
+    'sMinus=N&Position=&Rank=N&RookieYear=&Season='+year+'&Seas'+
     'onSegment=&SeasonType=Regular+Season&TeamID=0&VsConferenc'+
     'e=&VsDivision=&mode=Advanced&showDetails=0&showShots=1&sh'+
     'owZones=0';

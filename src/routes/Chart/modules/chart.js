@@ -2,6 +2,7 @@
 // Constants
 // ------------------------------------
 export const PLAYER_SELECT = 'PLAYER_SELECT'
+export const YEAR_SELECT = 'YEAR_SELECT'
 
 // ------------------------------------
 // Actions
@@ -13,8 +14,16 @@ export function playerSelect (value) {
   }
 }
 
+export function yearSelect (value) {
+  return {
+    type    : YEAR_SELECT,
+    payload : value
+  }
+}
+
 export const actions = {
-  playerSelect
+  playerSelect,
+  yearSelect
 }
 
 // ------------------------------------
@@ -25,7 +34,14 @@ const ACTION_HANDLERS = {
       return {
           ...state,
           id: action.payload.id,
-          name: action.payload.name
+          name: action.payload.name,
+          team: action.payload.team
+      }
+  },
+  [YEAR_SELECT] : (state, action) => {
+      return {
+          ...state,
+          year: action.payload
       }
   }
 }
@@ -37,11 +53,9 @@ const initialState = {
     id: '2546',
     name: 'Carmelo Anthony',
     year: '2015-16',
-    team: 'NYK'
+    team: 'Knicks'
 }
 export default function chartReducer (state = initialState, action) {
   const handler = ACTION_HANDLERS[action.type]
-  var retVal = handler ? handler(state, action) : state
-  console.log(retVal)
-  return retVal
+  return handler ? handler(state, action) : state
 }
